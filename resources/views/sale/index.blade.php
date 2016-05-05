@@ -17,8 +17,8 @@
                 @foreach($sales as $sale)
                     <tr>
                         <td style="font-size: 12px;"><b>{{ $sale->username }}</b></td>
-                        <td style="font-size: 12px; font-style: italic;">{{ $user->proname }}</td>
-                        <td style="font-size: 12px;">{{ $user->quantity }}</td>
+                        <td style="font-size: 12px; font-style: italic;">{{ $sale->proname }}</td>
+                        <td style="font-size: 12px;">{{ $sale->quantity }}</td>
                         <td style="text-align: center">
                             <a class="btn btn-primary btn-xs">Show</a>
                             <a class="btn btn-warning btn-xs">Edit</a>

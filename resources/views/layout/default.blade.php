@@ -19,7 +19,7 @@
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('user') }}">User</a></li>
                     <li><a href="{{ url('product') }}">Product</a></li>
-                    <li><a href="#">Sale</a></li>
+                    <li><a href="{{ url('sale') }}">Sale</a></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->

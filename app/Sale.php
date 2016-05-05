@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Sale extends Model
 {
-    protected  $table = 'products';
+    protected  $table = 'sales';
     protected $primaryKey = 'id';
 
     const CREATED_AT = 'created_at';

@@ -1,10 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use DB;
 use App\Sale;
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -17,7 +16,11 @@ class SaleController extends Controller
      */
     public function index()
     {
-        $sales = DB::raw('SELECT sales.id, users.name as username, products.name as proname, sales.quantity FROM sales, users, products WHERE sales.user_id = users.id AND sales.pro_id = products.id');
+        $sales = DB::table('sales')
+                    ->join('users', 'sales.user_id', '=', 'users.id')
+                    ->join('products', 'sales.pro_id','=', 'products.id')
+                    ->select('sales.*','users.name as username', 'products.name as proname')
+                    ->get();
         return view('sale.index', compact('sales'));
     }
 
